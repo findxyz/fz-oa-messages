@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        console.log(request.id);
+        console.log(request.action);
         if (request.action == "content")
             sendResponse({message: "message from content"});
     });
