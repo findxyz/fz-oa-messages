@@ -1,12 +1,26 @@
 {
-  // Required
   "manifest_version": 2,
   "name": "OaMessages",
   "version": "1.0",
   "description": "Show unread Oa Messages",
-
   "browser_action": {
-    "default_title": "OaMessages",      // optional; shown in tooltip
+    "default_title": "OaMessages",
     "default_popup": "popup.html"
-  }
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "permissions": [
+    "http://sys.cranewh.com:8000/index.do*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://sys.cranewh.com:8000/index.do*"
+      ],
+      "js": ["js/content.js"]
+    }
+  ]
 }
