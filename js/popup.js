@@ -5,6 +5,7 @@ function showMessage(response) {
         try{
             var result = JSON.parse(response);
             var table = "<table>";
+            table += "<caption>可自分配的权限组</caption>";
             table += "<tr><th>ID</th><th>权限组名称</th></tr>";
             for(var i=0; i<result.rows.length; i++){
                 var record = result.rows[i];
