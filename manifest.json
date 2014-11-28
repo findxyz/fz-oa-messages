@@ -13,12 +13,14 @@
     ]
   },
   "permissions": [
-    "http://sys.cranewh.com:8000/index.do*"
+    "http://sys.cranewh.com:8000/index.do*",
+    "http://erp.cranewh.com:8001/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://sys.cranewh.com:8000/index.do*"
+        "http://sys.cranewh.com:8000/index.do*",
+        "http://erp.cranewh.com:8001/*"
       ],
       "js": ["js/content.js"]
     }
