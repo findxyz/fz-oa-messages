@@ -1,0 +1,1 @@
+queryUrl = 'http://erp.cranewh.com:8001/system/userOwnAssignedManager/listUserOwnAssigned.do';

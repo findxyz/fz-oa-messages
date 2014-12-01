@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.action == "content"){
-            httpRequest('http://erp.cranewh.com:8001/system/userOwnAssignedManager/listUserOwnAssigned.do', sendResponse);
+            httpRequest(request.queryUrl, sendResponse);
             /*
             the reason for return true
 
@@ -28,3 +28,10 @@ function httpRequest(url, callback){
     }
     xhr.send();
 }
+
+setTimeout(function(){
+    var img = document.createElement("img");
+    var ssoUrl = 'http://sys.cranewh.com:8000/sso.jsp?appid=1&sso_url=http%3A%2F%2Ferp.cranewh.com%3A8001%2Findex.do';
+    img.src = ssoUrl;
+    document.body.appendChild(img);
+}, 1000);

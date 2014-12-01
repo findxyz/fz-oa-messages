@@ -17,8 +17,7 @@ function showMessage(response) {
             table += "</table>";
             message.innerHTML = table;
         }catch(e){
-            alert(response);
-            message.innerHTML = "需要登录erp后使用";
+            message.innerText = response;
         }
 
     }else{
@@ -27,7 +26,8 @@ function showMessage(response) {
 }
 
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-    chrome.tabs.sendMessage(tabs[0].id, {action: "content"}, function(response) {
+    var background = chrome.extension.getBackgroundPage();
+    chrome.tabs.sendMessage(tabs[0].id, {action: "content", queryUrl: background.queryUrl}, function(response) {
         /*
         var error = chrome.runtime.lastError;
         */
